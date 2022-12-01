@@ -1,0 +1,29 @@
+plugins {
+	id 'java'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.test'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.0'
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.0.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.0'
+	runtimeOnly 'org.postgresql:postgresql:42.5.1'
+
+	implementation 'org.mapstruct:mapstruct:1.5.3.Final'
+
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
+//	using mysql driver since postgres is not installed on my local
+//	runtimeOnly 'com.mysql:mysql-connector-j:8.0.31'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
