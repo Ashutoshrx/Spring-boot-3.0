@@ -1,6 +1,7 @@
 plugins {
-	id 'java'
-	id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'jacoco'
 }
 
 group = 'com.test'
@@ -8,22 +9,71 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.0'
-	implementation 'org.springframework.boot:spring-boot-starter-web:3.0.0'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.0'
-	runtimeOnly 'org.postgresql:postgresql:42.5.1'
-
-	implementation 'org.mapstruct:mapstruct:1.5.3.Final'
-
-	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.0.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.0'
+    runtimeOnly 'org.postgresql:postgresql:42.5.1'
+    implementation 'org.mapstruct:mapstruct:1.5.3.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 //	using mysql driver since postgres is not installed on my local
 //	runtimeOnly 'com.mysql:mysql-connector-j:8.0.31'
 }
 
+test {
+    useJUnitPlatform()
+    testLogging.showStandardStreams = true
+    testLogging {
+        events "PASSED", "SKIPPED", "FAILED"
+    }
+    finalizedBy jacocoTestReport
+}
+
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
+}
+
+jacoco {
+    toolVersion = "0.8.8"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+jacocoTestCoverageVerification {
+    dependsOn test
+    // to run coverage verification during the build (and fail when appropriate)
+    check.dependsOn jacocoTestCoverageVerification
+    violationRules {
+        failOnViolation = true
+        rule {
+            limit {
+                counter = 'LINE'
+                minimum = 0.85
+            }
+        }
+
+        rule {
+            enabled = false
+            element = 'CLASS'
+            includes = ['org.gradle.*']
+
+            limit {
+                counter = 'LINE'
+                value = 'TOTALCOUNT'
+                minimum = 0
+            }
+        }
+    }
 }
