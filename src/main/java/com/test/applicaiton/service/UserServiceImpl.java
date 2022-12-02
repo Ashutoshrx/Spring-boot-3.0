@@ -1,6 +1,7 @@
 package com.test.applicaiton.service;
 
 import com.test.applicaiton.entity.User;
+import com.test.applicaiton.exception.ApplicationServiceException;
 import com.test.applicaiton.mapper.UserMapper;
 import com.test.applicaiton.repository.UserRepository;
 import dto.UserDTO;
@@ -28,38 +29,58 @@ public class UserServiceImpl implements UserService {
     public void addUser(UserDTO userDTO) {
         userDTO.setUserId(UUID.randomUUID().toString());
         LOGGER.info("Started adding user with userId:{}", userDTO.getUserId());
-        User user = null;
-        if (!ObjectUtils.isEmpty(userDTO)) {
-            user = userMapper.userDTOToUser(userDTO);
-            LOGGER.debug("UserId is:{}", user.getUserId());
+        try {
+            if (ObjectUtils.isEmpty(userDTO) || userDTO.getEmail().isEmpty() || userDTO.getFirstName().isEmpty()) {
+                throw new ApplicationServiceException("601", "Invalid input");
+            } else {
+                User user = userMapper.userDTOToUser(userDTO);
+                LOGGER.debug("UserId is:{}", user.getUserId());
+                if (!ObjectUtils.isEmpty(user)) {
+                    userRepository.save(user);
+                }
+            }
+            LOGGER.info("User has been added with name as:{}", userDTO.getFirstName());
+        } catch (IllegalArgumentException e) {
+            throw new ApplicationServiceException("602", "Unable to save the data" + e.getMessage());
+        } catch (Exception e) {
+            throw new ApplicationServiceException("603", "Something went wrong" + e.getMessage());
         }
-        if (!ObjectUtils.isEmpty(user)) {
-            userRepository.save(user);
-        }
-        LOGGER.info("User has been added with userName as:{}", userDTO.getFirstName());
+
     }
 
     @Override
     public List<UserDTO> fetchAllUsers() {
         LOGGER.info("Fetching all users list");
-        List<User> userList = userRepository.findAll();
-        return userList.stream().map(user -> userMapper.userDTOToUser(user)).toList();
+        try {
+            List<User> userList = userRepository.findAll();
+            if (CollectionUtils.isEmpty(userList)) {
+                throw new ApplicationServiceException("NOT FOUND", "No data found");
+            }
+            return userList.stream().map(user -> userMapper.userDTOToUser(user)).toList();
+        } catch (RuntimeException e) {
+            throw new ApplicationServiceException("603", "Failed to fetch data" + e.getMessage());
+        }
+
     }
 
     @Override
     public List<UserDTO> fetchUserByUserName(String userName) {
 
         if (ObjectUtils.isEmpty(userName)) {
-//            Need to throw exception
-            return null;
+            throw new ApplicationServiceException("601", "Invalid Input");
         } else {
-            LOGGER.info("Fetching users by name:{}", userName);
-            List<User> userList = userRepository.fetchUsersByUserName(userName);
-            if (!CollectionUtils.isEmpty(userList)) {
-                LOGGER.debug("Data is:{}", userList.get(0).getUserId());
-                return userList.stream().map(user -> userMapper.userDTOToUser(user)).toList();
+            try {
+                LOGGER.info("Fetching users by name:{}", userName);
+                List<User> userList = userRepository.fetchUsersByUserName((userName));
+                if (!CollectionUtils.isEmpty(userList)) {
+                    LOGGER.debug("Data is:{}", userList.get(0).getUserId());
+                    return userList.stream().map(user -> userMapper.userDTOToUser(user)).toList();
+                } else {
+                    throw new ApplicationServiceException("602", "No Data Found");
+                }
+            } catch (Exception e) {
+                throw new RuntimeException("Something went wrong while fetching data: " + e.getMessage());
             }
-            return null;
 
         }
     }
