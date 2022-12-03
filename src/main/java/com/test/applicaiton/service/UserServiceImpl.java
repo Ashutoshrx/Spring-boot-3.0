@@ -33,13 +33,23 @@ public class UserServiceImpl implements UserService {
             if (ObjectUtils.isEmpty(userDTO) || userDTO.getEmail().isEmpty() || userDTO.getFirstName().isEmpty()) {
                 throw new ApplicationServiceException("601", "Invalid input");
             } else {
-                User user = userMapper.userDTOToUser(userDTO);
-                LOGGER.debug("UserId is:{}", user.getUserId());
-                if (!ObjectUtils.isEmpty(user)) {
-                    userRepository.save(user);
+                User existingUser = userRepository.findByFirstName(userDTO.getFirstName());
+                if (ObjectUtils.isEmpty(existingUser)) {
+                    User user = userMapper.userDTOToUser(userDTO);
+                    LOGGER.debug("UserId is:{}", user.getUserId());
+                    if (!ObjectUtils.isEmpty(user)) {
+                        userRepository.save(user);
+                        LOGGER.info("User has been added with name as:{}", userDTO.getFirstName());
+                    }
+                } else {
+                    LOGGER.debug("User Found in the database with the name :{}", userDTO.getFirstName());
+                    existingUser.setFirstName(userDTO.getFirstName());
+                    existingUser.setEmail(userDTO.getEmail());
+                    existingUser.setLastName(userDTO.getLastName());
+                    userRepository.saveAndFlush(existingUser);
+                    LOGGER.info("Updated data with name :{}", userDTO.getFirstName());
                 }
             }
-            LOGGER.info("User has been added with name as:{}", userDTO.getFirstName());
         } catch (IllegalArgumentException e) {
             throw new ApplicationServiceException("602", "Unable to save the data" + e.getMessage());
         } catch (Exception e) {

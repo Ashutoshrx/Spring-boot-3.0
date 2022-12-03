@@ -10,6 +10,8 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
-    @Query(value = "SELECT u.* FROM usertable u WHERE u.first_name LIKE %:name%",nativeQuery = true)
+    @Query(value = "SELECT u.* FROM usertable u WHERE u.first_name LIKE %:name%", nativeQuery = true)
     List<User> fetchUsersByUserName(@Param("name") String userName);
+
+    User findByFirstName(String userName);
 }
