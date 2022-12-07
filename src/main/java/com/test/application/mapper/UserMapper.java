@@ -1,7 +1,7 @@
-package com.test.applicaiton.mapper;
+package com.test.application.mapper;
 
 
-import com.test.applicaiton.entity.User;
+import com.test.application.entity.User;
 import dto.UserDTO;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;

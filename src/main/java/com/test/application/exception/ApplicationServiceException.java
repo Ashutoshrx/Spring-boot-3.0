@@ -1,4 +1,4 @@
-package com.test.applicaiton.exception;
+package com.test.application.exception;
 
 import java.io.Serial;
 

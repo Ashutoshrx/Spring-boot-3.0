@@ -1,9 +1,9 @@
-package com.test.applicaiton.service;
+package com.test.application.service;
 
-import com.test.applicaiton.entity.User;
-import com.test.applicaiton.exception.ApplicationServiceException;
-import com.test.applicaiton.mapper.UserMapper;
-import com.test.applicaiton.repository.UserRepository;
+import com.test.application.entity.User;
+import com.test.application.exception.ApplicationServiceException;
+import com.test.application.mapper.UserMapper;
+import com.test.application.repository.UserRepository;
 import dto.UserDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

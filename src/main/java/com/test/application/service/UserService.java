@@ -1,6 +1,5 @@
-package com.test.applicaiton.service;
+package com.test.application.service;
 
-import com.test.applicaiton.entity.User;
 import dto.UserDTO;
 
 import java.util.List;

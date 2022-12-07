@@ -1,13 +1,15 @@
 package dto;
 
-import com.fasterxml.jackson.databind.ser.std.StdKeySerializers;
-import jakarta.persistence.Id;
+import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 public class UserDTO {
     @Id
     private String userId;
+    @NotBlank
     private String firstName;
     private String lastName;
+    @NotBlank
     private String email;
 
     public String getUserId() {
