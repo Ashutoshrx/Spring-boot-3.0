@@ -24,6 +24,13 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
     testImplementation group: 'org.testng', name: 'testng', version: '7.6.1'
     implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.13'
+
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-config-client', version: '3.1.4'
+    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:3.1.5'
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-config', version: '3.1.4'
+
+
+//    implementation group: 'com.okta.spring', name: 'okta-spring-boot-starter', version: '2.1.6'
 }
 
 test {
