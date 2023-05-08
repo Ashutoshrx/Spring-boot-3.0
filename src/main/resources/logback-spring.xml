@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="base.xml"/>
+    <logger name="com.test.application" level="$(app.logging.level)" additivity="false">
+        <appender-ref ref="APP_LOG"/>
+        <!--        <if condition='property ("app.logging.console.enable").equals("true") '>-->
+        <!--            <then>-->
+        <appender-ref ref="RollingFile"/>
+        <!--            </then>-->
+        <!--        </if>-->
+    </logger>    <!--    At trace level-->
+    <logger name="com.test.application" level="trace" additivity="false">
+        <appender-ref ref="RollingFile"/>
+        <appender-ref ref="Console"/>
+    </logger>
+</configuration>
+
+

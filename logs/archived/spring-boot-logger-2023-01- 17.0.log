@@ -1,0 +1,20 @@
+2023-01-17 17:35:20,449 INFO org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-01-17 17:35:30,737 INFO org.springframework.boot.StartupInfoLogger: Started ApplicaitonApplication in 13.334 seconds (JVM running for 14.041)
+2023-01-17 17:35:41,833 INFO com.test.application.service.UserServiceImpl: Fetching all users list
+2023-01-17 17:35:52,474 INFO com.test.application.service.UserServiceImpl: Fetching users by name:Ash
+2023-01-17 17:35:52,520 DEBUG com.test.application.service.UserServiceImpl: Data is:d2906f35-b55c-4fb0-bfd2-e1cbe39091ac
+2023-01-17 17:35:59,054 INFO com.test.application.service.UserServiceImpl: Fetching users by name:sh
+2023-01-17 17:35:59,057 DEBUG com.test.application.service.UserServiceImpl: Data is:d2906f35-b55c-4fb0-bfd2-e1cbe39091ac
+2023-01-17 17:36:12,351 INFO org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-01-17 17:36:22,122 INFO org.springframework.boot.StartupInfoLogger: Started ApplicaitonApplication in 12.021 seconds (JVM running for 12.584)
+2023-01-17 17:36:30,551 INFO com.test.application.service.UserServiceImpl: Fetching all users list
+2023-01-17 17:36:34,881 INFO com.test.application.service.UserServiceImpl: Fetching users by name:sh
+2023-01-17 17:44:04,133 INFO com.test.application.service.UserServiceImpl: Started adding user with userId:afb726b6-9c77-4fae-a375-8580e32b3aa2
+2023-01-17 17:44:04,148 DEBUG com.test.application.service.UserServiceImpl: UserId is:afb726b6-9c77-4fae-a375-8580e32b3aa2
+2023-01-17 17:44:04,207 INFO com.test.application.service.UserServiceImpl: User has been added with name as:Akshatha
+2023-01-17 17:44:22,929 INFO com.test.application.service.UserServiceImpl: Fetching users by name:sh
+2023-01-17 17:44:44,290 INFO com.test.application.service.UserServiceImpl: Fetching users by name:sh
+2023-01-17 17:47:51,969 INFO com.test.application.service.UserServiceImpl: Fetching all users list
+2023-01-17 17:50:41,968 INFO org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-01-17 17:50:49,581 INFO org.springframework.boot.StartupInfoLogger: Started ApplicaitonApplication in 9.854 seconds (JVM running for 10.488)
+2023-01-17 17:52:03,441 INFO com.test.application.service.UserServiceImpl: Started adding user with userId:8d0af62a-f95d-4845-b62c-eef5e3be7a4e

@@ -1,0 +1,19 @@
+2023-01-12 19:15:23,589 INFO org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-01-12 19:15:32,496 INFO org.springframework.boot.StartupInfoLogger: Started ApplicaitonApplication in 12.984 seconds (JVM running for 14.073)
+2023-01-12 19:16:44,650 INFO com.test.application.service.UserServiceImpl: Started adding user with userId:d04bfea5-7e79-4535-83c8-23547664357f
+2023-01-12 19:21:04,152 INFO org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-01-12 19:21:14,197 INFO org.springframework.boot.StartupInfoLogger: Started ApplicaitonApplication in 13.827 seconds (JVM running for 14.885)
+2023-01-12 19:21:20,658 INFO com.test.application.service.UserServiceImpl: Started adding user with userId:9e761942-65da-4c42-85de-f00f949fca9f
+2023-01-12 19:23:25,721 INFO org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-01-12 19:23:39,917 INFO org.springframework.boot.StartupInfoLogger: Started ApplicaitonApplication in 17.251 seconds (JVM running for 18.405)
+2023-01-12 19:23:47,391 INFO com.test.application.service.UserServiceImpl: Started adding user with userId:d2906f35-b55c-4fb0-bfd2-e1cbe39091ac
+2023-01-12 19:23:47,613 DEBUG com.test.application.service.UserServiceImpl: UserId is:d2906f35-b55c-4fb0-bfd2-e1cbe39091ac
+2023-01-12 19:23:47,725 INFO com.test.application.service.UserServiceImpl: User has been added with name as:Ashutosh
+2023-01-12 19:42:16,011 INFO org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-01-12 19:42:30,524 INFO org.springframework.boot.StartupInfoLogger: Started ApplicaitonApplication in 17.927 seconds (JVM running for 19.138)
+2023-01-12 19:42:38,246 INFO com.test.application.service.UserServiceImpl: Started adding user with userId:6e3b4077-968f-4f4f-be59-81f471e97f2b
+2023-01-12 19:42:38,681 DEBUG com.test.application.service.UserServiceImpl: User Found in the database with the name :Ashutosh
+2023-01-12 19:42:38,748 INFO com.test.application.service.UserServiceImpl: Updated data with name :Ashutosh
+2023-01-12 19:43:06,551 INFO com.test.application.service.UserServiceImpl: Started adding user with userId:36aa206a-755a-4085-a269-5c2d45661f86
+2023-01-12 19:43:06,559 DEBUG com.test.application.service.UserServiceImpl: UserId is:36aa206a-755a-4085-a269-5c2d45661f86
+2023-01-12 19:43:06,619 INFO com.test.application.service.UserServiceImpl: User has been added with name as:Ronnie

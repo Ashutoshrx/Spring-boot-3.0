@@ -4,16 +4,21 @@ import com.test.application.entity.User;
 import com.test.application.exception.ApplicationServiceException;
 import com.test.application.mapper.UserMapper;
 import com.test.application.repository.UserRepository;
+import dto.PaginationSortRequestDTO;
 import dto.UserDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -66,7 +71,7 @@ public class UserServiceImpl implements UserService {
             if (CollectionUtils.isEmpty(userList)) {
                 throw new ApplicationServiceException("NOT FOUND", "No data found");
             }
-            return userList.stream().map(user -> userMapper.userDTOToUser(user)).toList();
+            return userList.stream().map(user -> userMapper.userToUserDTO(user)).toList();
         } catch (RuntimeException e) {
             throw new ApplicationServiceException("603", "Failed to fetch data" + e.getMessage());
         }
@@ -84,7 +89,7 @@ public class UserServiceImpl implements UserService {
                 List<User> userList = userRepository.fetchUsersByUserName((userName));
                 if (!CollectionUtils.isEmpty(userList)) {
                     LOGGER.debug("Data is:{}", userList.get(0).getUserId());
-                    return userList.stream().map(user -> userMapper.userDTOToUser(user)).toList();
+                    return userList.stream().map(user -> userMapper.userToUserDTO(user)).toList();
                 } else {
                     throw new ApplicationServiceException("602", "No Data Found");
                 }
@@ -94,4 +99,27 @@ public class UserServiceImpl implements UserService {
 
         }
     }
+
+    @Override
+    public List<UserDTO> fetchUsersWithSorting(PaginationSortRequestDTO paginationSortRequestDTO) {
+        List<User> users = paginationSortRequestDTO.getSortInfoDTO().getSortOrder().equalsIgnoreCase("Asc") ?
+                userRepository.findAll(Sort.by(Sort.Direction.ASC, paginationSortRequestDTO.getSortInfoDTO().getSortColumn())) :
+                userRepository.findAll(Sort.by(Sort.Direction.DESC, paginationSortRequestDTO.getSortInfoDTO().getSortColumn()));
+        return users.stream().map(user -> userMapper.userToUserDTO(user)).collect(Collectors.toList());
+
+    }
+
+    @Override
+    public Page<UserDTO> fetchUsersWithPaginationAndSorting(PaginationSortRequestDTO paginationSortRequestDTO) {
+        Page<User> users= userRepository.findAll(PageRequest.of(paginationSortRequestDTO.getPaginationInfoDTO().getStartIndex(),
+                paginationSortRequestDTO.getPaginationInfoDTO().getPageSize()).withSort(Sort.by(Sort.Direction.ASC,paginationSortRequestDTO.getSortInfoDTO().getSortColumn())));
+        return null;
+    }
+
+/*
+    @Override
+    public List<UserDTO> fetchUsersWithPagination(Integer offset, Integer pageSize) {
+        Page<User> users = userRepository.findAll(PageRequest.of(offset, pageSize));
+        return users.stream().map(user -> userMapper.userDTOToUser(user)).collect(Collectors.toList());
+    }*/
 }

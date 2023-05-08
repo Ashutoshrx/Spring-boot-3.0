@@ -9,6 +9,7 @@ public class ApplicationServiceException extends RuntimeException {
     private String errorCode;
     private String errorMessage;
 
+
     public ApplicationServiceException(String errorCode, String errorMessage) {
         this.errorCode = errorCode;
         this.errorMessage = errorMessage;

@@ -7,7 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "usertable")
+@Table(name = "user_table")
+//@Table(name = "user_table",schema = "rea_users")
 //@JsonIgnoreProperties({"userId", "lastName"})
 public class User {
     @Id

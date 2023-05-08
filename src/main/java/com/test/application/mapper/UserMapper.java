@@ -13,7 +13,7 @@ import java.util.UUID;
 public interface UserMapper {
     @Mapping(source = "user.firstName",target = "firstName")
     @Mapping(source = "user.lastName",target = "lastName")
-    UserDTO userDTOToUser(User user);
+    UserDTO userToUserDTO(User user);
 
     @InheritInverseConfiguration
     User userDTOToUser(UserDTO userDTO);

@@ -1,0 +1,2 @@
+2023-01-10 22:14:00,000 INFO org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-01-10 22:14:09,498 INFO org.springframework.boot.StartupInfoLogger: Started ApplicaitonApplication in 12.307 seconds (JVM running for 13.19)

@@ -1,0 +1,4 @@
+2023-01-18 16:20:50,704 INFO org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-01-18 16:21:02,195 INFO org.springframework.boot.StartupInfoLogger: Started ApplicaitonApplication in 14.63 seconds (JVM running for 15.439)
+2023-01-18 16:23:00,433 INFO com.test.application.service.UserServiceImpl: Fetching all users list
+2023-01-18 16:23:07,817 INFO com.test.application.service.UserServiceImpl: Fetching users by name:sh

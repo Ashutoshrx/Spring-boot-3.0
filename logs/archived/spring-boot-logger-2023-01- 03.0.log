@@ -1,0 +1,92 @@
+2023-01-03 20:21:01,499 INFO org.springframework.boot.logging.DeferredLog: Fetching config from server at : http://localhost:8888
+2023-01-03 20:21:01,507 INFO org.springframework.boot.logging.DeferredLog: Located environment: name=test-dev, profiles=[default], label=null, version=null, state=null
+2023-01-03 20:21:02,799 INFO org.springframework.cloud.config.client.ConfigServicePropertySourceLocator: Fetching config from server at : http://localhost:8888
+2023-01-03 20:21:02,915 INFO org.springframework.cloud.config.client.ConfigServicePropertySourceLocator: Located environment: name=test-dev, profiles=[default], label=null, version=null, state=null
+2023-01-03 20:21:02,916 INFO org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration: Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-file:/C:/Enact/config/test-dev.properties'}, BootstrapPropertySource {name='bootstrapProperties-file:/C:/Enact/config/application.properties'}]
+2023-01-03 20:21:02,955 INFO org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-01-03 20:21:03,084 INFO org.springframework.boot.logging.DeferredLog: Fetching config from server at : http://localhost:8888
+2023-01-03 20:21:03,086 INFO org.springframework.boot.logging.DeferredLog: Located environment: name=test-dev, profiles=[default], label=null, version=null, state=null
+2023-01-03 20:21:05,853 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-03 20:21:07,095 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 1030 ms. Found 1 JPA repository interfaces.
+2023-01-03 20:21:07,834 INFO org.springframework.cloud.context.scope.GenericScope: BeanFactory id=4dcdf674-abcf-303e-b6e5-b721c9637085
+2023-01-03 20:21:09,677 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8082 (http)
+2023-01-03 20:21:09,713 INFO org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8082"]
+2023-01-03 20:21:09,716 INFO org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2023-01-03 20:21:09,717 INFO org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-01-03 20:21:10,227 INFO org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2023-01-03 20:21:10,227 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 7136 ms
+2023-01-03 20:21:11,982 INFO com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2023-01-03 20:21:13,033 INFO com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2023-01-03 20:21:13,199 INFO org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-03 20:21:13,361 INFO org.hibernate.Version: HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-03 20:21:14,141 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-03 20:21:14,924 INFO org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-01-03 20:21:16,361 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-03 20:21:16,378 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-03 20:21:18,309 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-03 20:21:24,263 INFO org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8082"]
+2023-01-03 20:21:24,355 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8082 (http) with context path ''
+2023-01-03 20:21:25,191 INFO org.springframework.boot.StartupInfoLogger: Started ApplicaitonApplication in 25.935 seconds (JVM running for 27.225)
+2023-01-03 20:21:38,267 INFO org.apache.juli.logging.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-03 20:21:38,267 INFO org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2023-01-03 20:21:38,269 INFO org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
+2023-01-03 20:21:38,324 INFO com.test.application.service.UserServiceImpl: Fetching users by name:As
+2023-01-03 20:21:38,423 DEBUG com.test.application.service.UserServiceImpl: Data is:e8139fb8-c61d-462f-abff-ecc6c956006d
+2023-01-03 20:21:46,992 INFO com.test.application.service.UserServiceImpl: Fetching users by name:r
+2023-01-03 20:21:46,996 DEBUG com.test.application.service.UserServiceImpl: Data is:2d9c4b44-7878-48d5-ab05-ad57df63dfce
+2023-01-03 20:21:54,037 INFO com.test.application.service.UserServiceImpl: Fetching users by name:rnd
+2023-01-03 20:21:54,044 ERROR org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.RuntimeException: Something went wrong while fetching data: null] with root cause
+java.lang.RuntimeException: Something went wrong while fetching data: null
+	at com.test.application.service.UserServiceImpl.fetchUserByUserName(UserServiceImpl.java:92)
+	at com.test.application.controller.UserController.fetchUserByUserName(UserController.java:69)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-01-03 20:23:53,285 INFO org.springdoc.api.AbstractOpenApiResource: Init duration for springdoc-openapi is: 163 ms

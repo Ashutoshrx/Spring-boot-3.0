@@ -1,0 +1,56 @@
+2023-01-02 17:29:28,210 INFO org.springframework.boot.logging.DeferredLog: Fetching config from server at : http://localhost:8888
+2023-01-02 17:29:28,213 INFO org.springframework.boot.logging.DeferredLog: Located environment: name=test-dev, profiles=[default], label=null, version=null, state=null
+2023-01-02 17:29:30,079 INFO org.springframework.cloud.config.client.ConfigServicePropertySourceLocator: Fetching config from server at : http://localhost:8888
+2023-01-02 17:29:30,106 INFO org.springframework.cloud.config.client.ConfigServicePropertySourceLocator: Located environment: name=test-dev, profiles=[default], label=null, version=null, state=null
+2023-01-02 17:29:30,107 INFO org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration: Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-file:/C:/Enact/config/test-dev.properties'}, BootstrapPropertySource {name='bootstrapProperties-file:/C:/Enact/config/application.properties'}]
+2023-01-02 17:29:30,147 INFO org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-01-02 17:29:30,232 INFO org.springframework.boot.logging.DeferredLog: Fetching config from server at : http://localhost:8888
+2023-01-02 17:29:30,233 INFO org.springframework.boot.logging.DeferredLog: Located environment: name=test-dev, profiles=[default], label=null, version=null, state=null
+2023-01-02 17:29:31,392 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-02 17:29:31,712 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 299 ms. Found 1 JPA repository interfaces.
+2023-01-02 17:29:32,070 INFO org.springframework.cloud.context.scope.GenericScope: BeanFactory id=4dcdf674-abcf-303e-b6e5-b721c9637085
+2023-01-02 17:29:32,800 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8082 (http)
+2023-01-02 17:29:32,817 INFO org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8082"]
+2023-01-02 17:29:32,818 INFO org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2023-01-02 17:29:32,819 INFO org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-01-02 17:29:33,088 INFO org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2023-01-02 17:29:33,089 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2856 ms
+2023-01-02 17:29:33,345 INFO com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2023-01-02 17:29:33,815 INFO com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2023-01-02 17:29:33,995 INFO org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-02 17:29:34,148 INFO org.hibernate.Version: HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-02 17:29:34,546 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-02 17:29:34,793 INFO org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-01-02 17:29:35,699 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-02 17:29:35,731 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-02 17:29:36,691 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-02 17:29:40,126 INFO org.springframework.cloud.commons.util.InetUtils: Cannot determine local hostname
+2023-01-02 17:29:41,525 INFO org.springframework.cloud.commons.util.InetUtils: Cannot determine local hostname
+2023-01-02 17:29:41,659 INFO org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8082"]
+2023-01-02 17:29:41,710 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8082 (http) with context path ''
+2023-01-02 17:29:43,038 INFO org.springframework.cloud.commons.util.InetUtils: Cannot determine local hostname
+2023-01-02 17:29:44,342 INFO org.springframework.cloud.commons.util.InetUtils: Cannot determine local hostname
+2023-01-02 17:29:44,368 INFO org.springframework.boot.StartupInfoLogger: Started ApplicaitonApplication in 19.209 seconds (JVM running for 20.538)
+2023-01-02 17:40:24,022 INFO org.apache.juli.logging.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-02 17:40:24,023 INFO org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2023-01-02 17:40:24,025 INFO org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
+2023-01-02 17:40:24,075 DEBUG com.test.application.controller.UserController: A DEBUG Message
+2023-01-02 17:40:24,076 INFO com.test.application.controller.UserController: An INFO Message
+2023-01-02 17:40:24,076 WARN com.test.application.controller.UserController: A WARN Message
+2023-01-02 17:40:24,076 ERROR com.test.application.controller.UserController: An ERROR Message
+2023-01-02 17:40:24,881 DEBUG com.test.application.controller.UserController: A DEBUG Message
+2023-01-02 17:40:24,883 INFO com.test.application.controller.UserController: An INFO Message
+2023-01-02 17:40:24,885 WARN com.test.application.controller.UserController: A WARN Message
+2023-01-02 17:40:24,885 ERROR com.test.application.controller.UserController: An ERROR Message
+2023-01-02 17:40:25,517 DEBUG com.test.application.controller.UserController: A DEBUG Message
+2023-01-02 17:40:25,517 INFO com.test.application.controller.UserController: An INFO Message
+2023-01-02 17:40:25,518 WARN com.test.application.controller.UserController: A WARN Message
+2023-01-02 17:40:25,518 ERROR com.test.application.controller.UserController: An ERROR Message
+2023-01-02 17:40:26,171 DEBUG com.test.application.controller.UserController: A DEBUG Message
+2023-01-02 17:40:26,172 INFO com.test.application.controller.UserController: An INFO Message
+2023-01-02 17:40:26,172 WARN com.test.application.controller.UserController: A WARN Message
+2023-01-02 17:40:26,173 ERROR com.test.application.controller.UserController: An ERROR Message
+2023-01-02 17:40:26,628 DEBUG com.test.application.controller.UserController: A DEBUG Message
+2023-01-02 17:40:26,629 INFO com.test.application.controller.UserController: An INFO Message
+2023-01-02 17:40:26,630 WARN com.test.application.controller.UserController: A WARN Message
+2023-01-02 17:40:26,630 ERROR com.test.application.controller.UserController: An ERROR Message
